@@ -1,6 +1,11 @@
 ---
-title: A page for you
+title: Daily Breifing
 layout: base.njk
+pagination:
+  data: news
+  size: 1
+  alias: news
+premalink: /{{ news.country }}/index.html
 ---
 
 
@@ -12,7 +17,7 @@ layout: base.njk
   </div>
 </div>
 <ul>
-  {% for article in news[0].articles %}
+  {% for article in news.articles %}
     <li><h2><a href="{{ article.url }}">{{ article.title }}</a></h2></li>
     <span>{{ article.source.name }} - <time>{{ article.publishedAt  }}</time></span>
   {% endfor %}
